@@ -8,10 +8,6 @@ boolean flameList[]= {false, false, false, false};
  
 
 void setup() {
-  pinMode(flame0, INPUT); // Set flamePin as input
-  //pinMode(flame1, INPUT); 
-  //pinMode(flame2, INPUT); 
-  //pinMode(flame3, INPUT); 
   Serial.begin(19200); // Start the serial communication
 }
 
@@ -20,13 +16,6 @@ void loop() {
   int flaVal1 = analogRead(flame1); 
   int flaVal2 = analogRead(flame2); 
   int flaVal3 = analogRead(flame3); 
-  //Serial.print("Sensor1: ");
-  //Serial.println(flaVal0);  
-  /*
-  Serial.println(flaVal1);
-  Serial.println(flaVal2);
-  Serial.println(flaVal3);
-  */
   delay(200);
   
   int threshold = 35;
