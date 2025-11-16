@@ -1,0 +1,27 @@
+#define LIMIT_SWITCH_A 7
+#define LIMIT_SWITCH_B 8
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LIMIT_SWITCH_A, INPUT_PULLUP);  // <--- REQUIRED
+  pinMode(LIMIT_SWITCH_B, INPUT_PULLUP);
+}
+
+void loop() {
+ int state1 = digitalRead(LIMIT_SWITCH_A);
+ int state2 = digitalRead(LIMIT_SWITCH_B);
+
+ if (state1 == LOW) {
+   Serial.println("Switch A no contact");
+ } else {
+   Serial.println("Switch A CONTACT");
+ }
+
+ if (state2 == LOW) {
+   Serial.println("Switch B no contact");
+ } else {
+   Serial.println("Switch B CONTACT");
+ }
+ Serial.println("----");
+ delay(100);
+}
